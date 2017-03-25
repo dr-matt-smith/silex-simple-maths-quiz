@@ -1,0 +1,28 @@
+{%  extends '_base.html.twig' %}
+
+{% block pageTitle %}home page{% endblock %}
+
+{% block main %}
+
+    <h1>Plus question {{ questionNumber }}</h1>
+
+    <p>
+        what is {{ num1 }} + {{ num2 }}?
+    </p>
+
+    <form
+                method="post"
+                action="/plusAnswer"
+    >
+        <input type="hidden" name="questionId" value="{{ questionNumber }}">
+        <input type="hidden" name="correctAnswer" value="{{ correctAnswer }}">
+
+        your answer:
+        <input type="text" name="studentAnswer" autofocus>
+
+        <input type="submit">
+
+    </form>
+
+
+{% endblock %}

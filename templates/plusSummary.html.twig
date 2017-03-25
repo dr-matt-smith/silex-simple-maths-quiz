@@ -1,0 +1,35 @@
+{%  extends '_base.html.twig' %}
+
+{% block pageTitle %}home page{% endblock %}
+
+{% block main %}
+
+    {% set total = 0 %}
+
+    <h1>Summary of questions and answers</h1>
+
+    {% for resultsForStudent in resultsForStudents %}
+        <p>
+            Question {{ resultsForStudent.questionId}} ::
+            {{ resultsForStudent.num1 }} + {{ resultsForStudent.num2 }} = {{ resultsForStudent.correctAnswer }}
+            your answer = {{ resultsForStudent.studentAnswer }}
+            score = {{ resultsForStudent.score }}
+            {% set total = total + resultsForStudent.score %}
+
+            {% if resultsForStudent.score == 1 %}
+                {% set tickCrossImage = 'tick_sm.png' %}
+            {% else %}
+                {% set tickCrossImage = 'cross_sm.png' %}
+            {% endif %}
+
+                <img src="/images/{{ tickCrossImage }}" alt="tick/cross">
+        </p>
+        <hr>
+    {% endfor %}
+
+    <p>
+        You scored {{ total }} out of a possible {{ numQuestions }}
+    </p>
+
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{
+    "autoload": {
+        "psr-4": {
+            "Itb\\": "src",
+            "Itb\\Module\\Model\\": "src/model",
+            "Itb\\Module\\Controller\\": "src/controllers"
+        }
+    },
+    "require": {
+        "twig/twig": "^2.1",
+        "silex/silex": "^2.0",
+        "mattsmithdev/pdo-crud-for-free-repositories": "^0.8.0"
+    },
+    "scripts":{
+        "run0":"php -S localhost:8000",
+        "run":"php -S localhost:8000 -t ./public"
+    }
+}

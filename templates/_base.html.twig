@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>test - {% block pageTitle %}{% endblock %}</title>
+    <style>
+        @import '/css/style.css';
+    </style>
+</head>
+
+<body>
+
+<a href="/">home</a>
+<hr>
+
+{% if flashMessage is defined %}
+    <p class="flashMessage">
+        {{ flashMessage }}
+    </p>
+    <hr>
+{% endif %}
+
+{% block main %}
+{% endblock %}
+
+</body>
+</html>

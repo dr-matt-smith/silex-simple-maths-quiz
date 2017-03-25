@@ -1,0 +1,39 @@
+{% extends '_base.html.twig' %}
+
+{% block pageTitle %}update form{% endblock %}
+
+{% block main %}
+    <h1>Update match results</h1>
+
+    <form action="/updateModuleResult" method="post">
+        <p>
+            Id:
+            {{ result.id }}
+            <input type="hidden" name="id" value="{{  result.id }}">
+        </p>
+        <p>
+            Semester:
+            <br>
+            <input type="text" name="semester" value="{{ result.semester }}">
+        </p>
+        <p>
+            Module code:
+            <br>
+            <input type="text" name="moduleCode" value="{{ result.moduleCode }}">
+        </p>
+        <p>
+            StudentNumber:
+            <br>
+            <input type="text" name="studentNumber" value="{{ result.studentNumber }}">
+        </p>
+        <p>
+            Grade:
+            <br>
+            <input type="text" name="grade" value="{{ result.grade }}">
+        </p>
+        <p>
+            <input type="submit">
+        </p>
+    </form>
+
+{% endblock %}

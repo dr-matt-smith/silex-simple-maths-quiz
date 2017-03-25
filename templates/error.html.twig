@@ -1,0 +1,16 @@
+{%  extends '_base.html.twig' %}
+
+{% block pageTitle %}error page{% endblock %}
+
+{% block main %}
+<h1>Whoops!</h1>
+
+<p class="error">
+    {{ message }}
+
+    {% if message2 is defined %}
+        <br>
+        {{ message2 }}
+    {% endif %}
+</p>
+{% endblock %}
